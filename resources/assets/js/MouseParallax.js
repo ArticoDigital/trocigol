@@ -11,7 +11,11 @@ class MouseParallax {
         this.is_mouseX = is_mouseX;
         this.is_mouseY = is_mouseY;
         this.speed = speed;
-        this.mouseMove()
+        const _self = this;
+        window.addEventListener("load", function () {
+            _self.mouseMove()
+        });
+
 
     }
 
