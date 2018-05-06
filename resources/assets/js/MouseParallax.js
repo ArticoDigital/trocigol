@@ -2,6 +2,9 @@ class MouseParallax {
     constructor(id, content, is_mouseX = true, is_mouseY = true, speed = 5) {
         this.parallaxBox = document.getElementById(content);
         this.el = document.getElementById(id);
+        if(!this.parallaxBox ||  !this.el){
+            return
+        }
         this.id = id;
         this.left = this.el.offsetLeft;
         this.top = this.el.offsetTop;

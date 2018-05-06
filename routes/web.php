@@ -9,7 +9,10 @@ Auth::routes();
 
 Route::get('auth/{provider}', 'Auth\SocialAuthController@redirectToProvider')->name('social.auth');
 Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+Route::get('cerrar-sesion', 'Auth\SocialAuthController@logout');
+
 Route::get('jugar', 'GameController@index')->name('play');
-Route::get('juego', 'GameController@game')->name('play');
-Route::get('como-jugar', 'GameController@how')->name('play');
-Route::get('tabla-posiciones', 'GameController@table')->name('play');
+Route::get('juego', 'GameController@game')->name('game');
+Route::get('como-jugar', 'GameController@how')->name('howGame');
+Route::get('tabla-posiciones', 'GameController@table')->name('table');
+

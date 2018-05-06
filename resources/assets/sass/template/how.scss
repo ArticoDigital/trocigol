@@ -1,0 +1,26 @@
+main.How {
+  background-image: url("../../images/back_profe.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center left;
+  overflow: hidden;
+  @include respond-to(medium) {
+    background-position: center center;
+  }
+}
+
+#Coach {
+  position: relative;
+}
+.How-title{
+  margin: auto  ;
+  width: 50rem;
+  max-width: 90%;
+  @include respond-to(medium){
+    position: fixed;
+    top: 4rem;
+    left: 4rem;
+  }
+}
+

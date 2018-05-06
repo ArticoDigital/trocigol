@@ -25,4 +25,16 @@ class GameController extends Controller
     {
         return view('front.play');
     }
+    public function game()
+    {
+        return view('front.play');
+    }
+    public function how()
+    {
+        return view('front.how');
+    }
+    public function table()
+    {
+        return view('front.play');
+    }
 }

@@ -3201,20 +3201,21 @@ main.Home {
 
 .Face {
   position: fixed;
-  bottom: 30vh;
-  max-width: 30rem;
-  left: calc(50% - 46vw);
+  max-width: 27rem;
+  left: calc(50vw - 135px);
+  bottom: calc(100vh - 300px);
 }
 
 @media (min-width: 45rem) {
   .Face {
+    bottom: 27vh;
     left: 2rem;
   }
 }
 
 @media (min-width: 1048px) {
   .Face {
-    width: 50vw;
+    width: 40vw;
     left: calc(50% - 47vw);
   }
 }
@@ -3250,6 +3251,31 @@ main.Home {
   }
 }
 
+[type="checkbox"] + label::before {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  border: 2px solid #fff !important;
+  -webkit-box-shadow: inset 0 0 3px #0003;
+          box-shadow: inset 0 0 3px #0003;
+  top: -.6rem !important;
+}
+
+[type="checkbox"]:checked + label::before {
+  background: -webkit-gradient(linear, left top, right top, color-stop(31%, #ffb400), to(#FF973D)) !important;
+  background: linear-gradient(to right, #ffb400 31%, #FF973D 100%) !important;
+}
+
+[type="checkbox"] + label::after {
+  width: 1.4rem !important;
+  height: .5rem !important;
+  top: .3rem;
+}
+
+[type="checkbox"] + label::after:checked + label:before {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
 main.Play {
   background-image: url(/images/back_play.jpg?ae9c1570bc48fdf2dc374b87234149cc);
   width: 100vw;
@@ -3281,5 +3307,38 @@ main.Play {
   max-width: 30rem;
   position: relative;
   top: -1rem;
+}
+
+main.How {
+  background-image: url(/images/back_profe.jpg?bae85540ebca19f0f8dfe503ad82e43e);
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center left;
+  overflow: hidden;
+}
+
+@media (min-width: 45rem) {
+  main.How {
+    background-position: center center;
+  }
+}
+
+#Coach {
+  position: relative;
+}
+
+.How-title {
+  margin: auto;
+  width: 50rem;
+  max-width: 90%;
+}
+
+@media (min-width: 45rem) {
+  .How-title {
+    position: fixed;
+    top: 4rem;
+    left: 4rem;
+  }
 }
 

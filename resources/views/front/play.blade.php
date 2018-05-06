@@ -3,14 +3,20 @@
     <main class="Play row" id="Play">
         <div class="Play-content">
             <div class="Play-game is-text-center">
-                <img src="{{asset('images/jugar.png')}}" alt="">
+                <a href="{{ route('game') }}">
+                    <img src="{{asset('images/jugar.png')}}" alt="">
+                </a>
             </div>
             <div class="row ">
                 <div class="Play-how align-center" id="Play-how">
-                    <img src="{{asset('images/como_jugar.png')}}" alt="">
+                    <a href="{{route('howGame')}}">
+                        <img src="{{asset('images/como_jugar.png')}}" alt="">
+                    </a>
                 </div>
                 <div class="Play-table" id="Play-table">
-                    <img src="{{asset('images/tabla_posiciones.png')}}" alt="">
+                    <a href="{{route('table')}}">
+                        <img src="{{asset('images/tabla_posiciones.png')}}" alt="">
+                    </a>
                 </div>
             </div>
         </div>

@@ -25,15 +25,16 @@ main.Home{
 }
 .Face{
   position: fixed;
-  bottom: 30vh;
-  max-width: 30rem;
-  left: calc(50% - 46vw);
+  max-width: 27rem;
+  left: calc(50vw - 135px);
+  bottom: calc(100vh - 300px);
   @include respond-to(medium){
-
+    bottom: 27vh;
     left: 2rem;
   }
   @include respond-to(large){
-    width: 50vw;
+
+    width: 40vw;
     left: calc(50% - 47vw);
   }
 }
@@ -55,5 +56,26 @@ main.Home{
   @include respond-to(medium){
     width: 40vw;
     right: 9rem;
+  }
+}
+[type="checkbox"] + label::before {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  border: 2px solid #fff !important;
+  box-shadow: inset 0 0 3px #0003;
+  top: -.6rem !important;
+}
+
+[type="checkbox"]:checked + label::before {
+  background: linear-gradient(to right, #ffb400 31%,#FF973D 100%) !important;
+}
+
+[type="checkbox"] + label::after{
+  width: 1.4rem !important;
+  height: .5rem !important;
+  top: .3rem;
+  &:checked + label:before {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
   }
 }
