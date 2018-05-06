@@ -1,0 +1,59 @@
+main.Home{
+  background-image: url("../../images/back_home.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center left;
+
+  @include respond-to(medium){
+    background-position: center center;
+  }
+}
+.Player{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  left: calc(50% - 46vw);
+  @include respond-to(medium){
+    width: 70vw;
+    left: 2rem;
+  }
+  @include respond-to(large){
+    width: 50vw;
+    left: calc(50% - 46vw);
+  }
+}
+.Face{
+  position: fixed;
+  bottom: 30vh;
+  max-width: 30rem;
+  left: calc(50% - 46vw);
+  @include respond-to(medium){
+
+    left: 2rem;
+  }
+  @include respond-to(large){
+    width: 50vw;
+    left: calc(50% - 47vw);
+  }
+}
+.logo{
+  max-width: 10rem;
+  @include respond-to(medium){
+    max-width: 15rem;
+  }
+  @include respond-to(large){
+    max-width: 20rem;
+  }
+}
+.Logotipo{
+  position: fixed;
+  top: 6rem;
+  width: 90vw;
+  max-width: 100rem;
+  right: 5vw;
+  @include respond-to(medium){
+    width: 40vw;
+    right: 9rem;
+  }
+}
