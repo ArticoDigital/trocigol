@@ -37,4 +37,8 @@ class GameController extends Controller
     {
         return view('front.play');
     }
+    public function playing()
+    {
+        return view('front.playing');
+    }
 }

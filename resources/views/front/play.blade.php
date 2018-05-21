@@ -3,7 +3,7 @@
     <main class="Play row" id="Play">
         <div class="Play-content">
             <div class="Play-game is-text-center">
-                <a href="{{ route('game') }}">
+                <a href="{{ route('playing') }}">
                     <img src="{{asset('images/jugar.png')}}" alt="">
                 </a>
             </div>
