@@ -3338,7 +3338,21 @@ main.How {
   .How-title {
     position: fixed;
     top: 4rem;
-    left: 4rem;
+    left: 15rem;
+  }
+}
+
+.back-coach {
+  width: 7rem;
+  max-width: 90%;
+  z-index: 1000;
+}
+
+@media (min-width: 45rem) {
+  .back-coach {
+    position: fixed;
+    top: 6rem;
+    left: 5rem;
   }
 }
 

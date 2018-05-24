@@ -20,7 +20,17 @@ main.How {
   @include respond-to(medium){
     position: fixed;
     top: 4rem;
-    left: 4rem;
+    left: 15rem;
+  }
+}
+.back-coach{
+  width: 7rem;
+  max-width: 90%;
+  z-index: 1000;
+  @include respond-to(medium){
+    position: fixed;
+    top: 6rem;
+    left: 5rem;
   }
 }
 
