@@ -15,7 +15,7 @@ class GameController extends BaseController{
 	 */
 	public function index() {
 
-		return [ 'created' => Auth::user() ];
+		return Auth::user();
 
 	}
 
