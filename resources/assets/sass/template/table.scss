@@ -1,0 +1,63 @@
+main.Table{
+  background: url("../../images/back-table.jpg") center right;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  h1{
+    font-family: 'Varsity', serif ;
+    background: #f6e336e6;
+    color: #211200;
+    border: .6rem #ffffff solid;
+    border-radius: 4rem;
+    padding: .2rem 0 0;
+    line-height: 4rem;
+    text-align: center;
+    width: 40rem;
+    max-width: 90vw;
+    margin:0 auto 2rem;
+    font-size: 3.6rem;
+
+  }
+  table{
+    width: 50rem;
+    max-width: 95vw;
+    text-align: center  ;
+
+  }
+  tr{
+    background: #360101e6;
+    color: white;
+    &:nth-child(2n){
+      background: #600101e6;
+    }
+  }
+  .padd-left{
+    padding-left: 24px !important;
+    text-align: left;
+  }
+  td{
+    border: .1rem #cf1118 solid;
+    padding: .8rem 1rem !important;
+    font-size: 2rem;
+    line-height: 2rem;
+    min-width: auto;
+  }
+  .idNumber{
+    font-family: 'Varsity', serif ;
+  }
+}
+.table-back{
+  width: 7rem;
+  max-width: 90%;
+  z-index: 1000;
+  @include respond-to(medium){
+    position: fixed;
+    top: 6rem;
+    right: 5rem;
+  }
+}
+.table-logo{
+  position: absolute;
+  top: 0;
+  left: 0;
+}

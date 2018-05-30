@@ -20,7 +20,17 @@ body{
   min-width: 100vw;
 
 }
+@font-face {
+  font-family: 'Varsity';
+  src: url('fonts/VarsityRegular.woff2') format('woff2'),
+  url('fonts/VarsityRegular.woff') format('woff'),
+  url('fonts/VarsityRegular.svg#VarsityRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import "template/home";
 @import "template/play";
 @import "template/how";
 @import "template/playing";
+@import "template/table";

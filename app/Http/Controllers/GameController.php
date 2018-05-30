@@ -33,12 +33,12 @@ class GameController extends Controller
     {
         return view('front.how');
     }
-    public function table()
-    {
-        return view('front.play');
-    }
     public function playing()
     {
         return view('front.playing');
+    }
+    public function table()
+    {
+        return view('front.table');
     }
 }

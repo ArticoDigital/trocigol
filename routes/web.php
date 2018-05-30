@@ -16,4 +16,5 @@ Route::get('juego', 'GameController@game')->name('game');
 Route::get('como-jugar', 'GameController@how')->name('howGame');
 Route::get('tabla-posiciones', 'GameController@table')->name('table');
 Route::get('jugando','GameController@playing')->name('playing');
+Route::get('tabla-posiciones','GameController@table')->name('table');
 
