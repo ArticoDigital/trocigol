@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/jk', 'api\GameController@index');
+Route::get('/jk', 'api\GameController@users');
 Route::middleware('auth:api')->group( function () {
 	Route::get('/users', 'api\GameController@index');
 });

@@ -20,7 +20,7 @@ class SocialAuthController extends Controller{
 		$social_user = Socialite::driver( $provider )->user();
 
 		if ( $user = User::where( 'email', $social_user->email )->first() ) {
-			Session::put( 'TokenUser', $user->createToken( 'trocigol' )->accessToken );
+			//Session::put( 'TokenUser', $user->createToken( 'trocigol' )->accessToken );
 			return $this->authAndRedirect( $user );
 		} else {
 
@@ -28,8 +28,9 @@ class SocialAuthController extends Controller{
 				'name'   => $social_user->name,
 				'email'  => $social_user->email,
 				'avatar' => $social_user->avatar,
+				'api_token' => str_random(50)
 			] );
-			Session::put( 'TokenUser', $user->createToken( 'trocigol' )->accessToken );
+			//Session::put( 'TokenUser', $user->createToken( 'trocigol' )->accessToken );
 
 			return $this->authAndRedirect( $user );
 		}

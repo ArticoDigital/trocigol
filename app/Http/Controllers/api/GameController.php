@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Models\Game;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\api\BaseController as BaseController;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,11 @@ class GameController extends BaseController{
 		return Auth::user();
 
 	}
+	public function users() {
 
+		return User::all()->first();
+
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *
