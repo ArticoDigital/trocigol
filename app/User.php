@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Game;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
@@ -27,4 +28,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    function games(){
+    	return $this->hasMany(Game::class);
+    }
 }

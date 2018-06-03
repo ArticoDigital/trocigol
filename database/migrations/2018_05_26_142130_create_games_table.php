@@ -15,12 +15,8 @@ class CreateGamesTable extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
 	        $table->increments('id');
-	        $table->time('time');
-	        $table->dateTime('date');
-	        $table->integer('level');
-	        $table->integer('score');
 	        $table->unsignedInteger('user_id');
-
+			$table->string('shirt',5);
 	        $table->foreign('user_id')->references('id')->on('users');
 	        $table->timestamps();
         });

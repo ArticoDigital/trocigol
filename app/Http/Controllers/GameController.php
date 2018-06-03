@@ -2,43 +2,56 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class GameController extends Controller
-{
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+class GameController extends Controller{
+	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct() {
+		$this->middleware( 'auth' );
+	}
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('front.play');
-    }
-    public function game()
-    {
-        return view('front.play');
-    }
-    public function how()
-    {
-        return view('front.how');
-    }
-    public function playing()
-    {
-        return view('front.playing');
-    }
-    public function table()
-    {
-        return view('front.table');
-    }
+	/**
+	 * Show the application dashboard.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index() {
+		return view( 'front.play' );
+	}
+
+	public function game() {
+		return view( 'front.play' );
+	}
+
+	public function how() {
+		return view( 'front.how' );
+	}
+
+	public function playing() {
+		return view( 'front.playing' );
+	}
+
+	public function table() {
+		$raw = "select users.`name`, scores.`game_id` as gameId , max(score) as maxscore
+from scores
+join games on scores.game_id = games.id
+join users on users.id = games.`user_id`
+GROUP BY  gameId order by maxscore desc limit 10";
+
+		$scores = DB::table( 'scores' )
+		           ->select(DB::raw('users.name, users.avatar, scores.game_id as gameId , max(score) as maxscore'))
+		           ->join( 'games', 'scores.game_id', '=', 'games.id' )
+		           ->join( 'users', 'users.id', '=', 'games.user_id' )
+		           ->groupBy( 'gameId' )
+		           ->orderBy('maxscore', 'desc')
+		           ->limit(10)->get();
+
+		return view( 'front.table', compact('scores'));
+	}
 }

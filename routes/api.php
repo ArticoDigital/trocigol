@@ -13,13 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
-
-Route::get('/jk', 'api\GameController@users');
 Route::middleware('auth:api')->group( function () {
-	Route::get('/users', 'api\GameController@index');
+	Route::post('/attempt_init', 'api\GameController@index');
+	Route::post('/insert_score', 'api\GameController@insertScore');
 });
 

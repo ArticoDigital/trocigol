@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Models\Game;
+use App\Models\Score;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\api\BaseController as BaseController;
@@ -12,79 +13,26 @@ class GameController extends BaseController{
 	/**
 	 * Display a listing of the resource.
 	 *
-	 * @return \Illuminate\Http\Response
+	 * @return array
 	 */
-	public function index() {
+	public function index( Request $request ) {
+		$game = Auth::user()->games()->create( [
+			'shirt' => $request->input( 'shirt' ),
+		] );
 
-		return Auth::user();
-
-	}
-	public function users() {
-
-		return User::all()->first();
-
-	}
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function create() {
+		return [ 'success' => true, 'idGame' => $game->id ];
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request $request
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function store( Request $request ) {
-		//
-	}
+	public function insertScore( Request $request ) {
+		$data= $request->all();
+		$idGame = $data['game_id'];
+		$game = Game::find($idGame);
+		$game->scores()->create([
+			'time' => '00:' . $data['min'] . ':' . $data['sec'],
+			'level' => $data['level'],
+			'score' => $data['score']
+		]);
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  \App\Models\GameApi $gameApi
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function show( GameApi $gameApi ) {
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  \App\Models\GameApi $gameApi
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function edit( GameApi $gameApi ) {
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request $request
-	 * @param  \App\Models\GameApi $gameApi
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function update( Request $request, GameApi $gameApi ) {
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  \App\Models\GameApi $gameApi
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function destroy( GameApi $gameApi ) {
-		//
+		return [ 'success' => true];
 	}
 }

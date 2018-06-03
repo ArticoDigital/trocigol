@@ -10,13 +10,14 @@
             <h1>POSICIONES </h1>
             <table>
                 <tbody>
-                @for($i = 1 ; $i <= 10; $i++)
+                @foreach($scores as $score)
                     <tr>
-                        <td width="10%" class="idNumber">{{($i == 10)?'':0}}{{$i}}</td>
-                        <td width="70%" class="padd-left">Nombre y apellido</td>
-                        <td width="40%" >1500</td>
+                        <td width="10%" class="idNumber">{{$loop->iteration}}</td>
+                        <td width="10%" class="idNumber"><img src="{{$score->avatar}}" alt=""></td>
+                        <td width="70%" class="padd-left">{{$score->name}}</td>
+                        <td width="40%" >{{$score->maxscore}}</td>
                     </tr>
-                @endfor
+                @endforeach
                 </tbody>
             </table>
             <a class="table-back" href="{{route('play')}}">
