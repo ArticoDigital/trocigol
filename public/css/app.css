@@ -3388,7 +3388,6 @@ div.gm4html5_div_class {
 div.gm4html5_login {
   padding: 20px;
   position: absolute;
-  border: solid 2px #000000;
   background-color: #404040;
   color: #00ff00;
   border-radius: 15px;
@@ -3421,7 +3420,16 @@ div.gm4html5_login_header {
 }
 
 .playing canvas {
-  border: 4px solid white;
+  z-index: 2;
+}
+
+.complete {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
 }
 
 main.Table {
