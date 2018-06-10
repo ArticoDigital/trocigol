@@ -3332,7 +3332,10 @@ main.How {
 }
 
 #Coach {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  width: 80vw;
+  left: calc(50% - 40vw);
 }
 
 .How-title {
@@ -3504,5 +3507,54 @@ main.Table .idNumber {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.nav-menu {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+}
+
+.nav-menu img {
+  max-width: 4rem;
+}
+
+.nav-menu li {
+  list-style: none;
+  margin: 0 1rem;
+}
+
+.icon {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  font-size: 2.2rem;
+  fill: #FFF9DB;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.playerAudio {
+  cursor: pointer;
+}
+
+.playerAudio svg {
+  position: absolute;
+  top: 50%;
+  left: 38px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.playerAudio svg.play {
+  display: none;
+}
+
+.playerAudio.pauseButton .play {
+  display: block;
+}
+
+.playerAudio.pauseButton .pause {
+  display: none;
 }
 

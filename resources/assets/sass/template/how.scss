@@ -11,7 +11,10 @@ main.How {
 }
 
 #Coach {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  width: 80vw;
+  left: calc(50% - 40vw);
 }
 .How-title{
   margin: auto  ;

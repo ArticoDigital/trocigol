@@ -4,6 +4,7 @@
     <div class="table-logo logo">
         <img src="{{asset('images/logo.png')}}" alt="">
     </div>
+    @component('parts.menu',['audio' => true, 'back' => true]) @endcomponent
     <main class="Table row justify-center align-center" id="Table">
 
         <div>
@@ -20,9 +21,7 @@
                 @endforeach
                 </tbody>
             </table>
-            <a class="table-back" href="{{route('play')}}">
-                <img src="{{asset('images/back.png')}}" alt="">
-            </a>
+
         </div>
 
 

@@ -186,11 +186,18 @@ new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Player', 'H
 
 new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Coach', 'How', true, false, 50);
 
-document.getElementById('Login-face').addEventListener('click', function (e) {
-   if (!document.getElementById('check1').checked) {
+var face = document.getElementById('Login-face');
+if (face) {
+  face.addEventListener('click', function (e) {
+    if (!document.getElementById('check1').checked) {
       e.preventDefault();
       __WEBPACK_IMPORTED_MODULE_1_sweetalert___default()("Debes aceptar los términos y condiciones !", "", "error");
-   }
+    }
+  });
+}
+
+document.getElementById('Player').addEventListener('click', function () {
+  this.classList.toggle('pauseButton');
 });
 
 /***/ }),

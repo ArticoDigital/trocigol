@@ -36,6 +36,7 @@
 	<meta name="msapplication-TileImage" content="{{asset('images/favicon/ms-icon-144x144.png')}}">
 </head>
 <body class="@yield('body') ">
+
 @yield('content')
 <script src="{{mix('js/app.js')}}"></script>
 @yield('script')
