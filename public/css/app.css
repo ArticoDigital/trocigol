@@ -3210,7 +3210,7 @@ main.Home {
   position: fixed;
   max-width: 27rem;
   left: calc(50vw - 135px);
-  bottom: calc(100vh - 300px);
+  bottom: 63vh;
 }
 
 @media (min-width: 45rem) {
@@ -3245,14 +3245,15 @@ main.Home {
 
 .Logotipo {
   position: fixed;
-  top: 6rem;
-  width: 90vw;
+  top: 1rem;
+  width: 20rem;
   max-width: 100rem;
-  right: 5vw;
+  right: 1rem;
 }
 
 @media (min-width: 45rem) {
   .Logotipo {
+    top: 6rem;
     width: 40vw;
     right: 9rem;
   }
@@ -3339,16 +3340,19 @@ main.How {
 }
 
 .How-title {
+  position: fixed;
   margin: auto;
-  width: 50rem;
-  max-width: 90%;
+  max-width: 90vw;
+  top: 10rem;
+  left: 1rem;
 }
 
 @media (min-width: 45rem) {
   .How-title {
-    position: fixed;
-    top: 4rem;
-    left: 15rem;
+    width: 50rem;
+    top: 3rem;
+    left: 4rem;
+    max-width: 40rem;
   }
 }
 
@@ -3511,8 +3515,15 @@ main.Table .idNumber {
 
 .nav-menu {
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  top: 0;
+  right: 1rem;
+}
+
+@media (min-width: 45rem) {
+  .nav-menu {
+    top: 2rem;
+    right: 2rem;
+  }
 }
 
 .nav-menu img {

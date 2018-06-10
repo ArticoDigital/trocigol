@@ -17,13 +17,16 @@ main.How {
   left: calc(50% - 40vw);
 }
 .How-title{
+  position: fixed;
   margin: auto  ;
-  width: 50rem;
-  max-width: 90%;
+  max-width: 90vw;
+  top: 10rem;
+  left: 1rem;
   @include respond-to(medium){
-    position: fixed;
-    top: 4rem;
-    left: 15rem;
+    width: 50rem;
+    top: 3rem;
+    left: 4rem;
+    max-width: 40rem;
   }
 }
 .back-coach{

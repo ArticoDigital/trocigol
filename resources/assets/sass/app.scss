@@ -38,8 +38,12 @@ body {
 @import "template/table";
 .nav-menu {
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  top: 0;
+  right: 1rem;
+  @include respond-to(medium){
+    top: 2rem;
+    right: 2rem;
+  }
   img {
     max-width: 4rem;
   }

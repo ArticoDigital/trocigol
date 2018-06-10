@@ -1,18 +1,13 @@
 import MouseParallax from './MouseParallax';
 import swal from 'sweetalert';
 
-function isMobileDevice() {
-  return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-}
 
-
-if(isMobileDevice){
+if (!isMobile()) {
   new MouseParallax('Face', 'Home', true, false, 40);
   new MouseParallax('Logotipo', 'Home', true, false, 20);
   new MouseParallax('Player', 'Home', true, false, 50);
 
 }
-
 
 
 new MouseParallax('Coach', 'How', true, false, 50);
@@ -57,3 +52,19 @@ if (audio) {
     document.cookie = "sound=1";
   }
 }
+
+
+function isMobile() {
+  if (navigator.userAgent.match(/Mobi/)) {
+    return true;
+  }
+
+  if ('screen' in window && window.screen.width < 1366) {
+    return true;
+  }
+
+  let connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+
+  return !!(connection && connection.type === 'cellular')
+}
+

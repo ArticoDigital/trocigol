@@ -27,7 +27,7 @@ main.Home{
   position: fixed;
   max-width: 27rem;
   left: calc(50vw - 135px);
-  bottom: calc(100vh - 300px);
+  bottom: 63vh;
   @include respond-to(medium){
     bottom: 27vh;
     left: 2rem;
@@ -49,11 +49,12 @@ main.Home{
 }
 .Logotipo{
   position: fixed;
-  top: 6rem;
-  width: 90vw;
+  top: 1rem;
+  width: 20rem;
   max-width: 100rem;
-  right: 5vw;
+  right: 1rem;
   @include respond-to(medium){
+    top: 6rem;
     width: 40vw;
     right: 9rem;
   }

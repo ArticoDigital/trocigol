@@ -180,11 +180,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-function isMobileDevice() {
-  return typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;
-}
-
-if (isMobileDevice) {
+if (!isMobile()) {
   new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Face', 'Home', true, false, 40);
   new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Logotipo', 'Home', true, false, 20);
   new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Player', 'Home', true, false, 50);
@@ -230,6 +226,20 @@ if (audio) {
     audio.play();
     document.cookie = "sound=1";
   }
+}
+
+function isMobile() {
+  if (navigator.userAgent.match(/Mobi/)) {
+    return true;
+  }
+
+  if ('screen' in window && window.screen.width < 1366) {
+    return true;
+  }
+
+  var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+
+  return !!(connection && connection.type === 'cellular');
 }
 
 /***/ }),
