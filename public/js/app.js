@@ -180,9 +180,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Face', 'Home', true, false, 40);
-new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Logotipo', 'Home', true, false, 20);
-new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Player', 'Home', true, false, 50);
+function isMobileDevice() {
+  return typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;
+}
+
+if (isMobileDevice) {
+  new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Face', 'Home', true, false, 40);
+  new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Logotipo', 'Home', true, false, 20);
+  new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Player', 'Home', true, false, 50);
+}
 
 new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Coach', 'How', true, false, 50);
 
@@ -195,10 +201,36 @@ if (face) {
     }
   });
 }
-
-document.getElementById('Player').addEventListener('click', function () {
+var audio = document.getElementById('Audio'),
+    audioEl = document.getElementById('Player');
+var cookieValue = 0;
+audioEl.addEventListener('click', function () {
   this.classList.toggle('pauseButton');
+
+  if (audio.paused) {
+    audio.play();
+    document.cookie = "sound=1";
+  } else {
+    audio.pause();
+    document.cookie = "sound=0";
+  }
 });
+if (audio) {
+  if (document.cookie.split(';').filter(function (item) {
+    return item.includes('sound=');
+  }).length) {
+    cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)sound\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    console.log(cookieValue);
+    if (cookieValue == 1) {
+      audio.play();
+    } else {
+      audioEl.classList.toggle('pauseButton');
+    }
+  } else {
+    audio.play();
+    document.cookie = "sound=1";
+  }
+}
 
 /***/ }),
 /* 4 */
@@ -210,59 +242,60 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var MouseParallax = function () {
-    function MouseParallax(id, content) {
-        var is_mouseX = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
-        var is_mouseY = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-        var speed = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 5;
+  function MouseParallax(id, content) {
+    var is_mouseX = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+    var is_mouseY = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+    var speed = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 5;
 
-        _classCallCheck(this, MouseParallax);
+    _classCallCheck(this, MouseParallax);
 
-        this.parallaxBox = document.getElementById(content);
-        this.el = document.getElementById(id);
-        if (!this.parallaxBox || !this.el) {
-            return;
-        }
-        this.id = id;
-        this.left = this.el.offsetLeft;
-        this.top = this.el.offsetTop;
-        this.is_mouseX = is_mouseX;
-        this.is_mouseY = is_mouseY;
-        this.speed = speed;
-        var _self = this;
-        window.addEventListener("load", function () {
-            _self.mouseMove();
-        });
+    this.parallaxBox = document.getElementById(content);
+    this.el = document.getElementById(id);
+    if (!this.parallaxBox || !this.el) {
+      return;
     }
+    this.id = id;
+    this.left = this.el.offsetLeft;
+    this.top = this.el.offsetTop;
+    this.is_mouseX = is_mouseX;
+    this.is_mouseY = is_mouseY;
+    this.speed = speed;
+    var _self = this;
+    window.addEventListener("load", function () {
+      _self.mouseMove();
+    });
+  }
 
-    _createClass(MouseParallax, [{
-        key: 'mouseMove',
-        value: function mouseMove() {
-            var _self = this;
-            this.parallaxBox.addEventListener('mousemove', function (event) {
-                event = event || window.event;
-                _self.mouseX = event.clientX - _self.parallaxBox.offsetLeft;
-                _self.mouseY = event.clientY - _self.parallaxBox.offsetTop;
-                _self.mouseParallaxMove();
-            });
-        }
-    }, {
-        key: 'mouseParallaxMove',
-        value: function mouseParallaxMove() {
-            var obj = this.el;
-            var parentObj = obj.parentNode,
-                containerWidth = parseInt(parentObj.offsetWidth),
-                containerHeight = parseInt(parentObj.offsetHeight);
+  _createClass(MouseParallax, [{
+    key: 'mouseMove',
+    value: function mouseMove() {
+      var _self = this;
 
-            if (this.is_mouseX) {
-                obj.style.left = this.left - (this.mouseX - (parseInt(obj.offsetWidth) / 2 + this.left)) / containerWidth * this.speed + 'px';
-            }
-            if (this.is_mouseY) {
-                obj.style.top = this.top - (this.mouseY - (parseInt(obj.offsetHeight) / 2 + this.top)) / containerHeight * this.speed + 'px';
-            }
-        }
-    }]);
+      this.parallaxBox.addEventListener('mousemove', function (event) {
+        event = event || window.event;
+        _self.mouseX = event.clientX - _self.parallaxBox.offsetLeft;
+        _self.mouseY = event.clientY - _self.parallaxBox.offsetTop;
+        _self.mouseParallaxMove();
+      });
+    }
+  }, {
+    key: 'mouseParallaxMove',
+    value: function mouseParallaxMove() {
+      var obj = this.el;
+      var parentObj = obj.parentNode,
+          containerWidth = parseInt(parentObj.offsetWidth),
+          containerHeight = parseInt(parentObj.offsetHeight);
 
-    return MouseParallax;
+      if (this.is_mouseX) {
+        obj.style.left = this.left - (this.mouseX - (parseInt(obj.offsetWidth) / 2 + this.left)) / containerWidth * this.speed + 'px';
+      }
+      if (this.is_mouseY) {
+        obj.style.top = this.top - (this.mouseY - (parseInt(obj.offsetHeight) / 2 + this.top)) / containerHeight * this.speed + 'px';
+      }
+    }
+  }]);
+
+  return MouseParallax;
 }();
 
 /* harmony default export */ __webpack_exports__["a"] = (MouseParallax);

@@ -1,5 +1,5 @@
 @if(isset($audio))
-	<audio preload="auto">
+	<audio preload="none"   loop id="Audio">
 		<source src="{{asset('audio/audio.mp3')}}"></source>
 	</audio>
 @endif
