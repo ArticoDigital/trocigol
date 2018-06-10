@@ -175,72 +175,40 @@ module.exports = __webpack_require__(8);
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MouseParallax__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_sweetalert__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_sweetalert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_sweetalert__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__isMobile__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__audio__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__alerts__ = __webpack_require__(24);
 
 
 
-if (!isMobile()) {
+
+
+Object(__WEBPACK_IMPORTED_MODULE_2__audio__["a" /* audioFunc */])();
+Object(__WEBPACK_IMPORTED_MODULE_3__alerts__["a" /* faceAlert */])('Login-face');
+if (!Object(__WEBPACK_IMPORTED_MODULE_1__isMobile__["a" /* isMobile */])()) {
   new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Face', 'Home', true, false, 40);
   new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Logotipo', 'Home', true, false, 20);
   new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Player', 'Home', true, false, 50);
+  new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Coach', 'How', true, false, 50);
 }
-
-new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Coach', 'How', true, false, 50);
-
-var face = document.getElementById('Login-face');
-if (face) {
-  face.addEventListener('click', function (e) {
-    if (!document.getElementById('check1').checked) {
-      e.preventDefault();
-      __WEBPACK_IMPORTED_MODULE_1_sweetalert___default()("Debes aceptar los términos y condiciones !", "", "error");
-    }
-  });
-}
-var audio = document.getElementById('Audio'),
-    audioEl = document.getElementById('Player');
-var cookieValue = 0;
-audioEl.addEventListener('click', function () {
-  this.classList.toggle('pauseButton');
-
-  if (audio.paused) {
-    audio.play();
-    document.cookie = "sound=1";
-  } else {
-    audio.pause();
-    document.cookie = "sound=0";
-  }
+var tk = document.createElement('script');
+tk.src = 'html5game/trocipollo.js?JJYXB=32394876';
+tk.type = 'text/javascript';
+tk.async = 'true';
+var promise = new Promise(function (resolve, reject) {
+  tk.onload = tk.onreadystatechange = function () {
+    var rs = this.readyState;
+    if (rs && rs != 'complete' && rs != 'loaded') return;
+    resolve();
+  };
 });
-if (audio) {
-  if (document.cookie.split(';').filter(function (item) {
-    return item.includes('sound=');
-  }).length) {
-    cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)sound\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    console.log(cookieValue);
-    if (cookieValue == 1) {
-      audio.play();
-    } else {
-      audioEl.classList.toggle('pauseButton');
-    }
-  } else {
-    audio.play();
-    document.cookie = "sound=1";
-  }
-}
 
-function isMobile() {
-  if (navigator.userAgent.match(/Mobi/)) {
-    return true;
-  }
-
-  if ('screen' in window && window.screen.width < 1366) {
-    return true;
-  }
-
-  var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-
-  return !!(connection && connection.type === 'cellular');
-}
+promise.then(function () {
+  GameMaker_Init();
+  document.querySelector('#loader').classList.add('hide');
+});
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(tk, s);
 
 /***/ }),
 /* 4 */
@@ -705,6 +673,102 @@ process.umask = function() { return 0; };
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = isMobile;
+
+function isMobile() {
+  if (navigator.userAgent.match(/Mobi/)) {
+    return true;
+  }
+
+  if ('screen' in window && window.screen.width < 1366) {
+    return true;
+  }
+
+  var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+
+  return !!(connection && connection.type === 'cellular');
+}
+
+/***/ }),
+/* 23 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = audioFunc;
+var audio = document.getElementById('Audio'),
+    audioEl = document.getElementById('Player');
+var cookieValue = 0;
+function audioFunc() {
+  if (audio) {
+    audioEl.addEventListener('click', function () {
+      this.classList.toggle('pauseButton');
+
+      if (audio.paused) {
+        audio.play();
+        document.cookie = "sound=1";
+      } else {
+        audio.pause();
+        document.cookie = "sound=0";
+      }
+    });
+
+    if (document.cookie.split(';').filter(function (item) {
+      return item.includes('sound=');
+    }).length) {
+      cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)sound\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+      if (cookieValue === '1') {
+        audio.play();
+      } else {
+        audioEl.classList.toggle('pauseButton');
+      }
+    } else {
+      audio.play();
+      document.cookie = "sound=1";
+    }
+  }
+}
+
+/***/ }),
+/* 24 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = faceAlert;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sweetalert__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sweetalert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_sweetalert__);
+
+
+function faceAlert(name) {
+  var face = document.getElementById(name);
+  if (face) {
+    face.addEventListener('click', function (e) {
+      if (!document.getElementById('check1').checked) {
+        e.preventDefault();
+        __WEBPACK_IMPORTED_MODULE_0_sweetalert___default()("Debes aceptar los términos y condiciones !", "", "error");
+      }
+    });
+  }
+}
 
 /***/ })
 /******/ ]);

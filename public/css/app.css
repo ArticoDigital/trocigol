@@ -3439,6 +3439,14 @@ div.gm4html5_login_header {
   z-index: 1;
 }
 
+.complete img {
+  max-width: 80rem;
+}
+
+#loader.hide {
+  display: none;
+}
+
 main.Table {
   background: url(/images/back-table.jpg?c3f30be39be75eabae9dd8aba69beb54) center right;
   width: 100vw;
@@ -3517,6 +3525,7 @@ main.Table .idNumber {
   position: fixed;
   top: 0;
   right: 1rem;
+  z-index: 10000;
 }
 
 @media (min-width: 45rem) {

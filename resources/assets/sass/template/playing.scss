@@ -64,4 +64,10 @@ div.gm4html5_login_header {
   width: 100vw;
   height: 100vh;
   z-index: 1;
+  img{
+    max-width: 80rem;
+  }
+}
+#loader.hide{
+  display: none;
 }

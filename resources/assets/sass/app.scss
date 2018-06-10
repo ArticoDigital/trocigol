@@ -40,6 +40,7 @@ body {
   position: fixed;
   top: 0;
   right: 1rem;
+  z-index: 10000;
   @include respond-to(medium){
     top: 2rem;
     right: 2rem;
