@@ -3654,15 +3654,6 @@ main.Table .idNumber {
   right: -15px;
 }
 
-@media (min-width: 45rem) {
-  .nav-menu {
-    top: 2rem;
-    right: 2rem;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
 .nav-menu img {
   max-width: 4rem;
 }
