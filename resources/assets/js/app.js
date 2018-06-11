@@ -15,13 +15,22 @@ const tk = document.createElement('script');
 tk.src = 'html5game/trocipollo.js?JJYXB=32394876';
 tk.type = 'text/javascript';
 tk.async = 'true';
+import swal from 'sweetalert';
 
 tk.onload = tk.onreadystatechange = function () {
   let rs = this.readyState;
   if (rs && rs != 'complete' && rs != 'loaded') return;
 
   let promise = new Promise(function (resolve, reject) {
-   GameMaker_Init();
+
+    if (window.innerHeight > window.innerWidth) {
+      swal("para mejorar tu experienia al jugar pon tu dispositivo en modo horizontal!", "", "warning");
+    }
+    window.onresize = function (event) {
+      applyOrientation();
+    };
+
+    GameMaker_Init();
     resolve();
   });
   promise.then(function () {
@@ -29,7 +38,15 @@ tk.onload = tk.onreadystatechange = function () {
   });
 };
 
-
 const s = document.getElementsByTagName('script')[0];
 s.parentNode.insertBefore(tk, s);
 
+
+function applyOrientation() {
+  if (window.innerHeight > window.innerWidth) {
+    swal("para mejorar tu experienia al jugar pon tu dispositivo en modo horizontal!", "", "warning");
+  }
+  else{
+    swal.close()
+  }
+}

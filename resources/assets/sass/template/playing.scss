@@ -96,6 +96,7 @@ div.gm4html5_login_header {
     background: linear-gradient(to bottom, #f2d902 50%,#ac9604 50%);
     animation-name: load;
     animation-duration: 20s;
+    animation-fill-mode: forwards;
   }
 
 }

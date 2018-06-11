@@ -178,6 +178,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__isMobile__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__audio__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__alerts__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_sweetalert__);
 
 
 
@@ -196,11 +198,20 @@ tk.src = 'html5game/trocipollo.js?JJYXB=32394876';
 tk.type = 'text/javascript';
 tk.async = 'true';
 
+
 tk.onload = tk.onreadystatechange = function () {
   var rs = this.readyState;
   if (rs && rs != 'complete' && rs != 'loaded') return;
 
   var promise = new Promise(function (resolve, reject) {
+
+    if (window.innerHeight > window.innerWidth) {
+      __WEBPACK_IMPORTED_MODULE_4_sweetalert___default()("para mejorar tu experienia al jugar pon tu dispositivo en modo horizontal!", "", "warning");
+    }
+    window.onresize = function (event) {
+      applyOrientation();
+    };
+
     GameMaker_Init();
     resolve();
   });
@@ -209,6 +220,14 @@ tk.onload = tk.onreadystatechange = function () {
 
 var s = document.getElementsByTagName('script')[0];
 s.parentNode.insertBefore(tk, s);
+
+function applyOrientation() {
+  if (window.innerHeight > window.innerWidth) {
+    __WEBPACK_IMPORTED_MODULE_4_sweetalert___default()("para mejorar tu experienia al jugar pon tu dispositivo en modo horizontal!", "", "warning");
+  } else {
+    __WEBPACK_IMPORTED_MODULE_4_sweetalert___default.a.close();
+  }
+}
 
 /***/ }),
 /* 4 */

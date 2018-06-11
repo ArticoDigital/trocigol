@@ -3481,6 +3481,8 @@ div.gm4html5_login_header {
           animation-name: load;
   -webkit-animation-duration: 20s;
           animation-duration: 20s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes load {
