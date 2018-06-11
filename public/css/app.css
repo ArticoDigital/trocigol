@@ -3450,6 +3450,12 @@ div.gm4html5_login_header {
   }
 }
 
+@media (max-height: 447px) {
+  .complete figure {
+    max-width: 178vh !important;
+  }
+}
+
 #loader.hide {
   display: none;
 }
