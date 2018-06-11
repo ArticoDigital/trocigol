@@ -3449,7 +3449,7 @@ div.gm4html5_login_header {
 }
 
 .loader-bar {
-  width: 250px;
+  width: 80px;
   position: absolute;
   height: 15px;
   border-radius: 10px;
@@ -3457,7 +3457,14 @@ div.gm4html5_login_header {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #ff653c), color-stop(50%, #ff0d01));
   background: linear-gradient(to bottom, #ff653c 50%, #ff0d01 50%);
   bottom: 0;
-  left: calc(50% - 125px);
+  left: calc(50% - 40px);
+}
+
+@media (min-width: 45rem) {
+  .loader-bar {
+    width: 250px;
+    left: calc(50% - 125px);
+  }
 }
 
 .loader-bar:after {

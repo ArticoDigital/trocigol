@@ -73,14 +73,18 @@ div.gm4html5_login_header {
   display: none;
 }
 .loader-bar{
-  width: 250px;
+  width: 80px;
   position:absolute;
   height: 15px;
   border-radius: 10px;
   margin: 20px;
   background: linear-gradient(to bottom, #ff653c 50%,#ff0d01 50%);
   bottom: 0;
-  left: calc(50% - 125px);
+  left: calc(50% - 40px);
+  @include respond-to(medium){
+    width: 250px;
+    left: calc(50% - 125px);
+  }
   &:after{
     width: 0;
     content: '';
