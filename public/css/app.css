@@ -3470,8 +3470,8 @@ div.gm4html5_login_header {
   background: linear-gradient(to bottom, #f2d902 50%, #ac9604 50%);
   -webkit-animation-name: load;
           animation-name: load;
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
 }
 
 @-webkit-keyframes load {
@@ -3479,12 +3479,24 @@ div.gm4html5_login_header {
     width: 0;
   }
 
-  25% {
+  10% {
     width: 25%;
   }
 
-  50% {
+  25% {
     width: 50%;
+  }
+
+  50% {
+    width: 70%;
+  }
+
+  80% {
+    width: 80%;
+  }
+
+  80% {
+    width: 90%;
   }
 
   100% {
@@ -3497,12 +3509,24 @@ div.gm4html5_login_header {
     width: 0;
   }
 
-  25% {
+  10% {
     width: 25%;
   }
 
-  50% {
+  25% {
     width: 50%;
+  }
+
+  50% {
+    width: 70%;
+  }
+
+  80% {
+    width: 80%;
+  }
+
+  80% {
+    width: 90%;
   }
 
   100% {
