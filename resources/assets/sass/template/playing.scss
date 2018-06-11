@@ -64,10 +64,38 @@ div.gm4html5_login_header {
   width: 100vw;
   height: 100vh;
   z-index: 1;
-  img{
+  figure{
     max-width: 80rem;
+    position: relative;
   }
 }
 #loader.hide{
   display: none;
+}
+.loader-bar{
+  width: 250px;
+  position:absolute;
+  height: 15px;
+  border-radius: 10px;
+  margin: 20px;
+  background: linear-gradient(to bottom, #ff653c 50%,#ff0d01 50%);
+  bottom: 0;
+  left: calc(50% - 125px);
+  &:after{
+    width: 0;
+    content: '';
+    position:absolute;
+    height: 100%;
+    border-radius: 1rem;
+    background: linear-gradient(to bottom, #f2d902 50%,#ac9604 50%);
+    animation-name: load;
+    animation-duration: 10s;
+  }
+
+}
+@keyframes load {
+  0%   {width: 0;}
+  25%  {width: 25% ;}
+  50%  {width: 50% ;}
+  100% {width: 100% ;}
 }

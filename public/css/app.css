@@ -3172,7 +3172,7 @@ body {
 }
 
 main.Home {
-  background-image: url(/images/back_home.jpg?eeface6b4f0bbdebe8c43d38315b8dd2);
+  background-image: url(/images/back_home.jpg?80497bfc81132f785c2a5eebd4bc27ed);
   width: 100vw;
   height: 100vh;
   background-size: cover;
@@ -3285,7 +3285,7 @@ main.Home {
 }
 
 main.Play {
-  background-image: url(/images/back_play.jpg?ae9c1570bc48fdf2dc374b87234149cc);
+  background-image: url(/images/back_play.jpg?aef077609ffb8af4508cfaa98290b754);
   width: 100vw;
   height: 100vh;
   background-size: cover;
@@ -3318,7 +3318,7 @@ main.Play {
 }
 
 main.How {
-  background-image: url(/images/back_profe.jpg?bae85540ebca19f0f8dfe503ad82e43e);
+  background-image: url(/images/back_profe.jpg?41c1a65b3d051c997129374ccb94caae);
   width: 100vw;
   height: 100vh;
   background-size: cover;
@@ -3422,7 +3422,7 @@ div.gm4html5_login_header {
 }
 
 .playing {
-  background: url(/images/back_playing.jpg?917f9cfc1c5ce937c3113b027fe1214d) center;
+  background: url(/images/back_playing.jpg?fe21f4a4c51cf92641d3d9d8752dfc26) center;
   background-size: cover;
 }
 
@@ -3439,16 +3439,79 @@ div.gm4html5_login_header {
   z-index: 1;
 }
 
-.complete img {
+.complete figure {
   max-width: 80rem;
+  position: relative;
 }
 
 #loader.hide {
   display: none;
 }
 
+.loader-bar {
+  width: 250px;
+  position: absolute;
+  height: 15px;
+  border-radius: 10px;
+  margin: 20px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #ff653c), color-stop(50%, #ff0d01));
+  background: linear-gradient(to bottom, #ff653c 50%, #ff0d01 50%);
+  bottom: 0;
+  left: calc(50% - 125px);
+}
+
+.loader-bar:after {
+  width: 0;
+  content: '';
+  position: absolute;
+  height: 100%;
+  border-radius: 1rem;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f2d902), color-stop(50%, #ac9604));
+  background: linear-gradient(to bottom, #f2d902 50%, #ac9604 50%);
+  -webkit-animation-name: load;
+          animation-name: load;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+
+@-webkit-keyframes load {
+  0% {
+    width: 0;
+  }
+
+  25% {
+    width: 25%;
+  }
+
+  50% {
+    width: 50%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes load {
+  0% {
+    width: 0;
+  }
+
+  25% {
+    width: 25%;
+  }
+
+  50% {
+    width: 50%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
 main.Table {
-  background: url(/images/back-table.jpg?c3f30be39be75eabae9dd8aba69beb54) center right;
+  background: url(/images/back-table.jpg?ebc696f8804a64f9625770fa980b3be6) center right;
   width: 100vw;
   height: 100vh;
   background-size: cover;

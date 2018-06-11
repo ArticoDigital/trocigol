@@ -13,10 +13,13 @@
         </canvas>
     </div>
 	<div class=" row justify-center align-center complete"  >
-        <img src="{{asset('images/loaderBack.png')}}" alt="">
-        <div class="loader" id="loader">
-            Cargando...
-        </div>
+        <figure>
+            <img src="{{asset('images/loaderBack.png')}}" alt="">
+            <div class="loader" id="loader">
+                <div class="loader-bar"></div>
+            </div>
+        </figure>
+
     </div>
     @component('parts.menu',['back' => true]) @endcomponent
 @endsection
