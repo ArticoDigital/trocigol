@@ -61,3 +61,12 @@ main.Table{
   top: 0;
   left: 0;
 }
+.Table-content{
+  margin: 10rem 0;
+}
+.Table-image{
+  display: none;
+  @include respond-to(medium){
+    display: table-cell;
+  }
+}

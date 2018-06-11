@@ -64,48 +64,73 @@ div.gm4html5_login_header {
   width: 100vw;
   height: 100vh;
   z-index: 1;
-  figure{
+  figure {
     max-width: 80rem;
     position: relative;
   }
 }
-#loader.hide{
+
+@media screen and (orientation: landscape) and (max-width: 800px) {
+  .complete {
+    figure {
+      max-width: 178vh;
+    }
+  }
+}
+
+#loader.hide {
   display: none;
 }
-.loader-bar{
+
+.loader-bar {
   width: 120px;
-  position:absolute;
+  position: absolute;
   height: 10px;
   border-radius: 10px;
   margin: 10px;
-  background: linear-gradient(to bottom, #ff653c 50%,#ff0d01 50%);
+  background: linear-gradient(to bottom, #ff653c 50%, #ff0d01 50%);
   bottom: 0;
   left: calc(50% - 60px);
-  @include respond-to(medium){
+  @include respond-to(medium) {
     width: 250px;
     margin: 20px;
     left: calc(50% - 125px);
     height: 15px;
   }
-  &:after{
+  &:after {
     width: 0;
     content: '';
-    position:absolute;
+    position: absolute;
     height: 100%;
     border-radius: 1rem;
-    background: linear-gradient(to bottom, #f2d902 50%,#ac9604 50%);
+    background: linear-gradient(to bottom, #f2d902 50%, #ac9604 50%);
     animation-name: load;
     animation-duration: 20s;
     animation-fill-mode: forwards;
   }
 
 }
+
 @keyframes load {
-  0%   {width: 0;}
-  10%  {width: 25% ;}
-  25%  {width: 50% ;}
-  50%  {width: 70% ;}
-  80%  {width: 80% ;}
-  80%  {width: 90% ;}
-  100% {width: 100% ;}
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 25%;
+  }
+  25% {
+    width: 50%;
+  }
+  50% {
+    width: 70%;
+  }
+  80% {
+    width: 80%;
+  }
+  80% {
+    width: 90%;
+  }
+  100% {
+    width: 100%;
+  }
 }

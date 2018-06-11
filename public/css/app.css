@@ -3444,6 +3444,12 @@ div.gm4html5_login_header {
   position: relative;
 }
 
+@media screen and (orientation: landscape) and (max-width: 800px) {
+  .complete figure {
+    max-width: 178vh;
+  }
+}
+
 #loader.hide {
   display: none;
 }
@@ -3619,17 +3625,35 @@ main.Table .idNumber {
   left: 0;
 }
 
+.Table-content {
+  margin: 10rem 0;
+}
+
+.Table-image {
+  display: none;
+}
+
+@media (min-width: 45rem) {
+  .Table-image {
+    display: table-cell;
+  }
+}
+
 .nav-menu {
   position: fixed;
   top: 0;
-  right: 1rem;
   z-index: 10000;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+  right: -15px;
 }
 
 @media (min-width: 45rem) {
   .nav-menu {
     top: 2rem;
     right: 2rem;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -3639,7 +3663,13 @@ main.Table .idNumber {
 
 .nav-menu li {
   list-style: none;
-  margin: 0 1rem;
+  margin: 0 .5rem;
+}
+
+@media (min-width: 45rem) {
+  .nav-menu li {
+    margin: 0 1rem;
+  }
 }
 
 .icon {
@@ -3674,5 +3704,9 @@ main.Table .idNumber {
 
 .playerAudio.pauseButton .pause {
   display: none;
+}
+
+main {
+  overflow: scroll;
 }
 

@@ -39,18 +39,23 @@ body {
 .nav-menu {
   position: fixed;
   top: 0;
-  right: 1rem;
   z-index: 10000;
+  transform: scale(.6);
+  right: -15px;
   @include respond-to(medium){
     top: 2rem;
     right: 2rem;
+    transform: scale(1);
   }
   img {
     max-width: 4rem;
   }
   li {
     list-style: none;
-    margin: 0 1rem;
+    margin: 0 .5rem;
+    @include respond-to(medium){
+      margin: 0 1rem
+    }
   }
 }
 .icon {
@@ -82,4 +87,6 @@ body {
     }
   }
 }
-
+main{
+  overflow: scroll;
+}
