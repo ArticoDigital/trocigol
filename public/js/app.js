@@ -187,6 +187,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__alerts__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_sweetalert__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Mobile__ = __webpack_require__(25);
+
 
 
 
@@ -195,47 +197,47 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 Object(__WEBPACK_IMPORTED_MODULE_2__audio__["a" /* audioFunc */])();
 Object(__WEBPACK_IMPORTED_MODULE_3__alerts__["a" /* faceAlert */])('Login-face');
+var coachImg = document.querySelector('#Coach img');
+if (coachImg && __WEBPACK_IMPORTED_MODULE_5__Mobile__["a" /* default */].any()) {
+    coachImg.src = 'images/como-jugar-mobile.png';
+}
 if (!Object(__WEBPACK_IMPORTED_MODULE_1__isMobile__["a" /* isMobile */])()) {
-  new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Face', 'Home', true, false, 40);
-  new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Logotipo', 'Home', true, false, 20);
-  new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Player', 'Home', true, false, 50);
-  new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Coach', 'How', true, false, 50);
+    new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Face', 'Home', true, false, 40);
+    new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Logotipo', 'Home', true, false, 20);
+    new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Player', 'Home', true, false, 50);
+    new __WEBPACK_IMPORTED_MODULE_0__MouseParallax__["a" /* default */]('Coach', 'How', true, false, 50);
 }
 var gm = document.getElementById('GM4HTML5_loadingscreen');
 
 if (gm) {
-  var applyOrientation = function applyOrientation() {
-    if (window.innerHeight > window.innerWidth) {
-      __WEBPACK_IMPORTED_MODULE_4_sweetalert___default()("para mejorar tu experienia al jugar pon tu dispositivo en modo horizontal!", "", "warning");
-    } else {
-      __WEBPACK_IMPORTED_MODULE_4_sweetalert___default.a.close();
-    }
-  };
+    var applyOrientation = function applyOrientation() {
+        if (window.innerHeight > window.innerWidth) {
+            __WEBPACK_IMPORTED_MODULE_4_sweetalert___default()("para mejorar tu experienia al jugar pon tu dispositivo en modo horizontal!", "", "warning");
+        } else {
+            __WEBPACK_IMPORTED_MODULE_4_sweetalert___default.a.close();
+        }
+    };
 
-  var tk = document.createElement('script');
-  tk.src = 'html5game/trocipollo.js?JJYXB=32394876';
-  tk.type = 'text/javascript';
-  tk.async = true;
+    var tk = document.createElement('script');
+    tk.src = 'html5game/trocipollo.js?JJYXB=32394876';
+    tk.type = 'text/javascript';
+    tk.async = true;
 
-  tk.onload = tk.onreadystatechange = function () {
-    var rs = this.readyState;
-    if (rs && rs != 'complete' && rs != 'loaded') return;
+    tk.onload = tk.onreadystatechange = function () {
+        var rs = this.readyState;
+        if (rs && rs != 'complete' && rs != 'loaded') return;
 
-    var promise = new Promise(function (resolve, reject) {
+        if (window.innerHeight > window.innerWidth) {
+            __WEBPACK_IMPORTED_MODULE_4_sweetalert___default()("para mejorar tu experienia al jugar pon tu dispositivo en modo horizontal!", "", "warning");
+        }
+        window.onresize = function (event) {
+            applyOrientation();
+        };
+        GameMaker_Init();
+    };
 
-      if (window.innerHeight > window.innerWidth) {
-        __WEBPACK_IMPORTED_MODULE_4_sweetalert___default()("para mejorar tu experienia al jugar pon tu dispositivo en modo horizontal!", "", "warning");
-      }
-      window.onresize = function (event) {
-        applyOrientation();
-      };
-
-      GameMaker_Init();
-    });
-  };
-
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(tk, s);
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(tk, s);
 }
 
 /***/ }),
@@ -777,6 +779,46 @@ process.umask = function() { return 0; };
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    Android: function Android() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function BlackBerry() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function iOS() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function Opera() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function Windows() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function any() {
+
+        return this.Android() || this.BlackBerry() || this.iOS() || this.Opera() || this.Windows();
+    }
+});
 
 /***/ })
 /******/ ]);
