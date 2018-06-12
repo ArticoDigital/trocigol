@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-	@component('parts.menu',['audio' => true, 'back' => true]) @endcomponent
+	@component('parts.menu',['audio' => true, 'back' => true, 'close' => true]) @endcomponent
 	<main class="How row" id="How">
 		<figure class="back-coach">
 

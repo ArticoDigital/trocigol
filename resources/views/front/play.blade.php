@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-    @component('parts.menu',['audio' => true]) @endcomponent
+    @component('parts.menu',['audio' => true, 'close' => true]) @endcomponent
     <main class="Play row" id="Play">
         <div class="Play-content">
             <div class="Play-game is-text-center">

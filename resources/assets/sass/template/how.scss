@@ -39,4 +39,8 @@ main.How {
     left: 5rem;
   }
 }
-
+@media screen and (orientation: landscape) and (max-width: 800px) {
+  .How-title {
+    display: none;
+  }
+}

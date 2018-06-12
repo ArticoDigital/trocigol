@@ -3298,6 +3298,13 @@ main.Home {
   }
 }
 
+@media (min-width: 800px) and (min-width: 400px) {
+  .Player {
+    width: 47vw;
+    left: calc(50% - 35vw);
+  }
+}
+
 main.Play {
   background-image: url(/images/back_play.jpg?aef077609ffb8af4508cfaa98290b754);
   width: 100vw;
@@ -3381,6 +3388,12 @@ main.How {
     position: fixed;
     top: 6rem;
     left: 5rem;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 800px) {
+  .How-title {
+    display: none;
   }
 }
 

@@ -91,3 +91,10 @@ main.Home{
     bottom: 50vh;
   }
 }
+
+@media   (min-width: 800px) and  (min-width: 400px){
+  .Player {
+    width: 47vw;
+    left: calc(50% - 35vw);
+  }
+}

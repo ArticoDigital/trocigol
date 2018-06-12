@@ -4,7 +4,7 @@
     <div class="table-logo logo">
         <img src="{{asset('images/logo.png')}}" alt="">
     </div>
-    @component('parts.menu',['audio' => true, 'back' => true]) @endcomponent
+    @component('parts.menu',['audio' => true, 'back' => true, 'close' => true]) @endcomponent
     <main class="Table row justify-center align-center" id="Table">
 
         <div class="Table-content">
