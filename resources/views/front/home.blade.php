@@ -11,7 +11,7 @@
             <a id="Login-face" href="{{ route('social.auth', 'facebook') }}"><img src="{{asset('images/face.png')}}" alt=""></a>
             <div>
                 <div class="row m-t-20 align-center">
-                    <img src="{{asset('images/condiciones.png')}}" class="col-12" alt="">
+                    <a target="_blank"  href="{{asset('pdf/terminos.pdf')}}" class="col-12"><img src="{{asset('images/condiciones.png')}}"  alt=""></a>
                     <div class="col-4">
                         <input type="checkbox" id="check1"> <label for="check1"></label>
                     </div>
@@ -22,4 +22,5 @@
             <img src="{{asset('images/logotipo.png')}}" alt="">
         </div>
     </main>
+
 @endsection
