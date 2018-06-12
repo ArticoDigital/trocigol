@@ -12,7 +12,7 @@ main.Home{
 .Player{
   position: fixed;
   bottom: 0;
-  width: 100vw;
+  width: 80vw;
   left: calc(50% - 46vw);
   @include respond-to(medium){
     width: 70vw;
@@ -27,10 +27,12 @@ main.Home{
   position: fixed;
   max-width: 27rem;
   left: calc(50vw - 135px);
-  bottom: 63vh;
+  bottom: 56vh;
+  transform: scale(.8);
   @include respond-to(medium){
     bottom: 27vh;
     left: 2rem;
+    transform: scale(1);
   }
   @include respond-to(large){
 
@@ -50,7 +52,7 @@ main.Home{
 .Logotipo{
   position: fixed;
   top: 1rem;
-  width: 20rem;
+  width: 16rem;
   max-width: 100rem;
   right: 1rem;
   @include respond-to(medium){
@@ -78,5 +80,14 @@ main.Home{
   &:checked + label:before {
     background: var(--primary-color);
     border-color: var(--primary-color);
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 800px) {
+  .Player {
+    width: 34vw;
+  }
+  .Face{
+    bottom: 50vh;
   }
 }

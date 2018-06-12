@@ -3188,7 +3188,7 @@ main.Home {
 .Player {
   position: fixed;
   bottom: 0;
-  width: 100vw;
+  width: 80vw;
   left: calc(50% - 46vw);
 }
 
@@ -3210,13 +3210,17 @@ main.Home {
   position: fixed;
   max-width: 27rem;
   left: calc(50vw - 135px);
-  bottom: 63vh;
+  bottom: 56vh;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 @media (min-width: 45rem) {
   .Face {
     bottom: 27vh;
     left: 2rem;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -3246,7 +3250,7 @@ main.Home {
 .Logotipo {
   position: fixed;
   top: 1rem;
-  width: 20rem;
+  width: 16rem;
   max-width: 100rem;
   right: 1rem;
 }
@@ -3282,6 +3286,16 @@ main.Home {
 [type="checkbox"] + label::after:checked + label:before {
   background: var(--primary-color);
   border-color: var(--primary-color);
+}
+
+@media screen and (orientation: landscape) and (max-width: 800px) {
+  .Player {
+    width: 34vw;
+  }
+
+  .Face {
+    bottom: 50vh;
+  }
 }
 
 main.Play {
