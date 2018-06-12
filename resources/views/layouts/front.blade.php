@@ -49,5 +49,15 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
 @yield('script')
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68442702-15"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-68442702-15');
+</script>
+
 </body>
 </html>
