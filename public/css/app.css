@@ -3397,6 +3397,12 @@ main.How {
   }
 }
 
+@media (min-width: 800px) and (min-width: 400px) {
+  .How-title {
+    display: none;
+  }
+}
+
 canvas {
   image-rendering: optimizeSpeed;
   -webkit-interpolation-mode: nearest-neighbor;
