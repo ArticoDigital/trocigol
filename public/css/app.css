@@ -3460,7 +3460,7 @@ div.gm4html5_login_header {
 }
 
 .playing canvas {
-  z-index: 2;
+  z-index: 20;
 }
 
 .complete {
