@@ -24,7 +24,7 @@ if (gm) {
     const tk = document.createElement('script');
 
     if(mobile.iOS()){
-        alert('ios');
+        alert('ios12');
         tk.src = 'ios/trocipollo.js';
     }else{
         alert('we');
