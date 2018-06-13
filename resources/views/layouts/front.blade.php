@@ -34,6 +34,9 @@
 	<link rel="manifest" href="{{asset('images/favicon/manifest.json')}}">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="{{asset('images/favicon/ms-icon-144x144.png')}}">
+	<meta http-equiv="Last-Modified" content="0">
+	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+	<meta http-equiv="Pragma" content="no-cache">
 </head>
 <body class="@yield('body') ">
 <div class="fb-like" data-href="https://www.facebook.com/TrocipolloColombia/" data-width="300px" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>

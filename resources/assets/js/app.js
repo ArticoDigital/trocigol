@@ -22,10 +22,11 @@ const gm = document.getElementById('GM4HTML5_loadingscreen');
 if (gm) {
 
     const tk = document.createElement('script');
-
+const stage = document.querySelector('.complete');
     if(mobile.iOS()){
-        alert('Su dispositivo IOS no es compatible con esta aplicación');
         tk.src = 'ios/trocipollo.js';
+        stage.style.maxWidth = "800px";
+
     }else{
         tk.src = 'html5game/trocipollo.js';
     }

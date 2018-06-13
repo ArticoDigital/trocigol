@@ -219,10 +219,10 @@ if (gm) {
     };
 
     var tk = document.createElement('script');
-
+    var stage = document.querySelector('.complete');
     if (__WEBPACK_IMPORTED_MODULE_5__Mobile__["a" /* default */].iOS()) {
-        alert('Su dispositivo IOS no es compatible con esta aplicación');
         tk.src = 'ios/trocipollo.js';
+        stage.style.maxWidth = "800px";
     } else {
         tk.src = 'html5game/trocipollo.js';
     }
