@@ -222,7 +222,7 @@ if (gm) {
     var stage = document.querySelector('.complete');
     if (__WEBPACK_IMPORTED_MODULE_5__Mobile__["a" /* default */].iOS()) {
         tk.src = 'ios/trocipollo.js';
-        stage.style.maxWidth = "800px";
+        stage.style.maxWidth = "600px";
     } else {
         tk.src = 'html5game/trocipollo.js';
     }

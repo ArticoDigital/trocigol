@@ -25,7 +25,7 @@ if (gm) {
 const stage = document.querySelector('.complete');
     if(mobile.iOS()){
         tk.src = 'ios/trocipollo.js';
-        stage.style.maxWidth = "800px";
+        stage.style.maxWidth = "600px";
 
     }else{
         tk.src = 'html5game/trocipollo.js';
