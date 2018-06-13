@@ -24,10 +24,9 @@ if (gm) {
     const tk = document.createElement('script');
 
     if(mobile.iOS()){
-        alert('ios13');
+        alert('Su dispositivo IOS no es compatible con esta aplicación');
         tk.src = 'ios/trocipollo.js';
     }else{
-        alert('we13');
         tk.src = 'html5game/trocipollo.js';
     }
     tk.type = 'text/javascript';
