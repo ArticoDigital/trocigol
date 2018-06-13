@@ -221,6 +221,7 @@ if (gm) {
     var tk = document.createElement('script');
 
     if (__WEBPACK_IMPORTED_MODULE_5__Mobile__["a" /* default */].iOS()) {
+        alert('ios');
         tk.src = 'ios/trocipollo.js';
     } else {
         tk.src = 'html5game/trocipollo.js';

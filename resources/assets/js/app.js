@@ -24,6 +24,7 @@ if (gm) {
     const tk = document.createElement('script');
 
     if(mobile.iOS()){
+        alert('ios');
         tk.src = 'ios/trocipollo.js';
     }else{
         tk.src = 'html5game/trocipollo.js';
