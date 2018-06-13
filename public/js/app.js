@@ -221,10 +221,10 @@ if (gm) {
     var tk = document.createElement('script');
 
     if (__WEBPACK_IMPORTED_MODULE_5__Mobile__["a" /* default */].iOS()) {
-        alert('ios12');
+        alert('ios13');
         tk.src = 'ios/trocipollo.js';
     } else {
-        alert('we');
+        alert('we13');
         tk.src = 'html5game/trocipollo.js';
     }
     tk.type = 'text/javascript';
