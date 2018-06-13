@@ -172,7 +172,7 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(4);
-module.exports = __webpack_require__(11);
+module.exports = __webpack_require__(12);
 
 
 /***/ }),
@@ -187,7 +187,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__alerts__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_sweetalert__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Mobile__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Mobile__ = __webpack_require__(11);
 
 
 
@@ -219,7 +219,12 @@ if (gm) {
     };
 
     var tk = document.createElement('script');
-    tk.src = 'html5game/trocipollo.js?JJYXB=32394876';
+
+    if (__WEBPACK_IMPORTED_MODULE_5__Mobile__["a" /* default */].iOS()) {
+        tk.src = 'ios/trocipollo.js';
+    } else {
+        tk.src = 'html5game/trocipollo.js';
+    }
     tk.type = 'text/javascript';
     tk.async = true;
 
@@ -776,25 +781,6 @@ process.umask = function() { return 0; };
 
 /***/ }),
 /* 11 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -819,6 +805,12 @@ process.umask = function() { return 0; };
         return this.Android() || this.BlackBerry() || this.iOS() || this.Opera() || this.Windows();
     }
 });
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

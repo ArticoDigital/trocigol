@@ -22,7 +22,12 @@ const gm = document.getElementById('GM4HTML5_loadingscreen');
 if (gm) {
 
     const tk = document.createElement('script');
-    tk.src = 'html5game/trocipollo.js?JJYXB=32394876';
+
+    if(mobile.iOS()){
+        tk.src = 'ios/trocipollo.js';
+    }else{
+        tk.src = 'html5game/trocipollo.js';
+    }
     tk.type = 'text/javascript';
     tk.async = true;
 
