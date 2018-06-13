@@ -36,15 +36,16 @@
 	<meta name="msapplication-TileImage" content="{{asset('images/favicon/ms-icon-144x144.png')}}">
 </head>
 <body class="@yield('body') ">
-<div class="fb-like" data-href="https://www.facebook.com/TrocipolloColombia/" data-width="300px" data-layout="box_count" data-action="recommend" data-size="small" data-show-faces="true" data-share="true"></div>
+<div class="fb-like" data-href="https://www.facebook.com/TrocipolloColombia/" data-width="300px" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 <div id="fb-root"></div>
 @yield('content')
 <script src="{{mix('js/app.js')}}"></script>
+
 <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.0&appId=184022595576366&autoLogAppEvents=1';
+        js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.0&appId=1665762773509276&autoLogAppEvents=1';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
