@@ -3188,8 +3188,8 @@ main.Home {
 .Player {
   position: fixed;
   bottom: 0;
-  width: 80vw;
-  left: calc(50% - 46vw);
+  width: 68vw;
+  left: calc(50% - 38vw);
 }
 
 @media (min-width: 45rem) {
@@ -3210,7 +3210,7 @@ main.Home {
   position: fixed;
   max-width: 27rem;
   left: calc(50vw - 135px);
-  bottom: 56vh;
+  bottom: 35vh;
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
 }
@@ -3741,8 +3741,8 @@ main {
 }
 
 .fb-like {
-  position: fixed !important;
-  bottom: 1rem;
-  right: 1rem;
+  margin: 2rem 0;
+  width: 100%;
+  text-align: center;
 }
 

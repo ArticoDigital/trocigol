@@ -12,8 +12,8 @@ main.Home{
 .Player{
   position: fixed;
   bottom: 0;
-  width: 80vw;
-  left: calc(50% - 46vw);
+  width: 68vw;
+  left: calc(50% - 38vw);
   @include respond-to(medium){
     width: 70vw;
     left: 2rem;
@@ -27,7 +27,7 @@ main.Home{
   position: fixed;
   max-width: 27rem;
   left: calc(50vw - 135px);
-  bottom: 56vh;
+  bottom: 35vh;
   transform: scale(.8);
   @include respond-to(medium){
     bottom: 27vh;
