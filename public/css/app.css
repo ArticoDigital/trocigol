@@ -3403,6 +3403,11 @@ main.How {
   }
 }
 
+.Error {
+  position: fixed;
+  bottom: 0;
+}
+
 canvas {
   image-rendering: optimizeSpeed;
   -webkit-interpolation-mode: nearest-neighbor;
