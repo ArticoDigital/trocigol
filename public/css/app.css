@@ -3403,7 +3403,7 @@ main.How {
   }
 }
 
-.Error {
+#Error {
   position: fixed;
   bottom: 0;
 }
