@@ -14,9 +14,11 @@ main.Home{
   bottom: 0;
   width: 68vw;
   left: calc(50% - 38vw);
+  display: none;
   @include respond-to(medium){
     width: 70vw;
     left: 2rem;
+    display: block;
   }
   @include respond-to(large){
     width: 50vw;
@@ -27,7 +29,7 @@ main.Home{
   position: fixed;
   max-width: 27rem;
   left: calc(50vw - 135px);
-  bottom: 35vh;
+  bottom: 2vh;
   transform: scale(.8);
   @include respond-to(medium){
     bottom: 27vh;
@@ -56,9 +58,22 @@ main.Home{
   max-width: 100rem;
   right: 1rem;
   @include respond-to(medium){
-    top: 6rem;
-    width: 40vw;
+    top: 2rem;
+    width: 45vw;
     right: 9rem;
+  }
+  figure{
+    max-width: 100%;
+    @include respond-to(medium){
+      max-width: 50%;
+      padding: 0 1rem;
+    }
+    &:last-child{
+      @include respond-to(medium){
+        display: block;
+      }
+      display: none;
+    }
   }
 }
 [type="checkbox"] + label::before {
@@ -88,7 +103,7 @@ main.Home{
     width: 34vw;
   }
   .Face{
-    bottom: 50vh;
+    bottom: 0;
   }
 }
 
@@ -96,5 +111,23 @@ main.Home{
   .Player {
     width: 47vw;
     left: calc(50% - 35vw);
+  }
+}
+.tv{
+  position: fixed;
+  max-width: 40vh;
+  left: calc(50vw - 20vh);
+  top: 7rem;
+
+
+}
+@media   (max-height: 400px)  {
+  .tv {
+    display: none;
+  }
+}
+.tv{
+  @include respond-to(medium){
+    display: none;
   }
 }

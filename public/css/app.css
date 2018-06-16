@@ -3190,12 +3190,14 @@ main.Home {
   bottom: 0;
   width: 68vw;
   left: calc(50% - 38vw);
+  display: none;
 }
 
 @media (min-width: 45rem) {
   .Player {
     width: 70vw;
     left: 2rem;
+    display: block;
   }
 }
 
@@ -3210,7 +3212,7 @@ main.Home {
   position: fixed;
   max-width: 27rem;
   left: calc(50vw - 135px);
-  bottom: 35vh;
+  bottom: 2vh;
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
 }
@@ -3257,9 +3259,30 @@ main.Home {
 
 @media (min-width: 45rem) {
   .Logotipo {
-    top: 6rem;
-    width: 40vw;
+    top: 2rem;
+    width: 45vw;
     right: 9rem;
+  }
+}
+
+.Logotipo figure {
+  max-width: 100%;
+}
+
+@media (min-width: 45rem) {
+  .Logotipo figure {
+    max-width: 50%;
+    padding: 0 1rem;
+  }
+}
+
+.Logotipo figure:last-child {
+  display: none;
+}
+
+@media (min-width: 45rem) {
+  .Logotipo figure:last-child {
+    display: block;
   }
 }
 
@@ -3294,7 +3317,7 @@ main.Home {
   }
 
   .Face {
-    bottom: 50vh;
+    bottom: 0;
   }
 }
 
@@ -3302,6 +3325,25 @@ main.Home {
   .Player {
     width: 47vw;
     left: calc(50% - 35vw);
+  }
+}
+
+.tv {
+  position: fixed;
+  max-width: 40vh;
+  left: calc(50vw - 20vh);
+  top: 7rem;
+}
+
+@media (max-height: 400px) {
+  .tv {
+    display: none;
+  }
+}
+
+@media (min-width: 45rem) {
+  .tv {
+    display: none;
   }
 }
 
