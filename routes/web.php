@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('front.home');
@@ -18,8 +19,4 @@ Route::get('tabla-posiciones', 'GameController@table')->name('table');
 Route::get('jugando','GameController@playing')->name('playing');
 Route::get('tabla-posiciones','GameController@table')->name('table');
 
-
-Route::get('e', function (){
-    return view('errors.error');
-});
 

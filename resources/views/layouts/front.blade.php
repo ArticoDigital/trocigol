@@ -54,6 +54,9 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-68442702-15');
+	@if(Auth::check())
+    gtag('set', {'user_id': {{Auth::user()->id}});
+	@endif
 </script>
 
 </body>
