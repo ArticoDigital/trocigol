@@ -17,13 +17,15 @@ class SocialAuthController extends Controller{
 
 	public function handleProviderCallback( $provider ) {
 
-		$social_user = Socialite::driver( $provider )->user();
+		$social_user = Socialite::driver( $provider )->stateless()->user();
 
 		if ( $user = User::where( 'email', $social_user->email )->first() ) {
 			//Session::put( 'TokenUser', $user->createToken( 'trocigol' )->accessToken );
 			return $this->authAndRedirect( $user );
 		} else {
-
+            if(empty($social_user->email)){
+                return 'tienes que tenes que tener un email válido';
+            }
 			$user = User::create( [
 				'name'   => $social_user->name,
 				'email'  => $social_user->email,
