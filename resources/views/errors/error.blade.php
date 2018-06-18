@@ -8,3 +8,13 @@
         </figure>
     </main>
 @endsection
+
+@section('gtag')
+    <script>
+        gtag('event', 'exception', {
+            'description': 'error login',
+            'fatal': false
+        });
+
+    </script>
+@endsection
