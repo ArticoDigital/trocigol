@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        Auth()->loginUsingId(1, true);
+
         $this->middleware(['auth', 'Admin']);
     }
 
