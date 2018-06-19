@@ -4,9 +4,7 @@
         <h3 class="is-text-center m-t-32 m-b-0">Partidas de {{$user->name}} </h3>
         <div class="row justify-between align-center">
             <a class="col-3 " href="{{route('usersReport')}}">Volver </a>
-            <a href="" class="col-2 col-m-1">
-                <img src="{{asset('images/document.svg')}}" alt="">
-            </a>
+
         </div>
     </div>
     <section class="table-container m-t-32">

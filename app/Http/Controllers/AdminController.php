@@ -9,7 +9,6 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-
         $this->middleware(['auth', 'Admin']);
     }
 
@@ -31,9 +30,7 @@ class AdminController extends Controller
         return view('back.home', compact('users'));
     }
     public function userAllExcel(){
-
+        return (new ReportUserExcelController)->download('usuarios.xlsx');
     }
-    public function scoreAllExcel(){
 
-    }
 }

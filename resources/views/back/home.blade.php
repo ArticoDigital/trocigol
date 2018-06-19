@@ -7,7 +7,7 @@
                 <label for=""><input type="text" name="name" placeholder="Búsqueda por nombre"></label>
                 <button>Buscar</button>
             </form>
-            <a href="" class="col-2 col-m-1">
+            <a href="{{route('userAllExcel')}}" class="col-2 col-m-1">
                 <img src="{{asset('images/document.svg')}}" alt="">
             </a>
         </div>
