@@ -20,6 +20,15 @@
 </head>
 <body>
 <main class="container">
+    <header class="row justify-between align-center">
+        <figure class="col-7 col-m-2">
+            <img src="{{asset('images/logo.png')}}" alt="">
+        </figure>
+        <div class="col-8 is-text-right">
+            <span class="p-r-20">Bienvenido {{Auth()->user()->name}}</span>
+            <a href="">Cerrar sesión</a>
+        </div>
+    </header>
     @yield('content')
 </main>
 <script src="{{mix('js/back.js')}}"></script>

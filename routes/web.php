@@ -19,6 +19,11 @@ Route::get('tabla-posiciones', 'GameController@table')->name('table');
 Route::get('jugando','GameController@playing')->name('playing');
 Route::get('tabla-posiciones','GameController@table')->name('table');
 
-Route::get('reporte', 'AdminController@index');
+Route::get('reporte', 'AdminController@index')->name('usersReport');
+Route::get('reporte/busqueda', 'AdminController@search')->name('gamesUserSearch');
+Route::get('reporte/juegos/{user}', 'AdminController@gamesUser')->name('gamesUserReport');
+
+Route::get('userAllExcel', 'AdminController@userAllExcel')->name('userAllExcel');
+Route::get('scoreAllExcel', 'AdminController@scoreAllExcel')->name('scoreAllExcel');
 
 

@@ -1,17 +1,12 @@
 @extends('layouts.back')
 @section('content')
-    <header class="row justify-between align-center">
-        <figure class="col-7 col-m-2">
-            <img src="{{asset('images/logo.png')}}" alt="">
-        </figure>
-        <div class="col-8 is-text-right">
-            <span class="p-r-20">Bienvenido {{Auth()->user()->name}}</span>
-            <a href="">Cerrar sesión</a>
-        </div>
-    </header>
     <div>
         <h1 class="is-text-center m-t-32 m-b-0">Reporte de usuarios </h1>
-        <div class="row justify-end ">
+        <div class="row justify-between align-center">
+            <form action="{{route('gamesUserSearch')}}" class="row col-10">
+                <label for=""><input type="text" name="name" placeholder="Búsqueda por nombre"></label>
+                <button>Buscar</button>
+            </form>
             <a href="" class="col-2 col-m-1">
                 <img src="{{asset('images/document.svg')}}" alt="">
             </a>
@@ -35,7 +30,7 @@
                     <td>{{$user->email}}</td>
                     <td><a target="_blank" href="{{$user->avatar}}">Ver avatar</a></td>
                     <td>{{$user->created_at}}</td>
-                    <td><a href="{{$user->id}}">Ver juegos</a></td>
+                    <td><a href="{{route('gamesUserReport',$user->id)}}">Ver juegos</a></td>
                 </tr>
             @endForeach
         </table>
