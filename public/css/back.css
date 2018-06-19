@@ -3159,3 +3159,20 @@ input[disabled]:hover {
   }
 }
 
+.table-container {
+  max-height: 40rem;
+  overflow-y: scroll;
+}
+
+.pagination {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 0;
+}
+
+.pagination li {
+  display: inline-block;
+  list-style: none;
+  padding: 1rem;
+}
+

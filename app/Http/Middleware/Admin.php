@@ -16,7 +16,7 @@ class Admin
     public function handle($request, Closure $next)
     {
         if (!Auth()->user()->admin) {
-            return redirect('play');
+            return redirect('jugar');
         }
 
         return $next($request);

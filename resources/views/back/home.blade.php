@@ -1,10 +1,10 @@
 @extends('layouts.back')
 @section('content')
     <header class="row justify-between align-center">
-        <figure class="col-2">
+        <figure class="col-7 col-m-2">
             <img src="{{asset('images/logo.png')}}" alt="">
         </figure>
-        <div class="col-5 is-text-right">
+        <div class="col-8 is-text-right">
             <span class="p-r-20">Bienvenido {{Auth()->user()->name}}</span>
             <a href="">Cerrar sesión</a>
         </div>
@@ -39,7 +39,7 @@
                 </tr>
             @endForeach
         </table>
-        {{ $users->links() }}
-    </section>
 
+    </section>
+    {{ $users->links() }}
 @endsection
