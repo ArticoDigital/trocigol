@@ -19,4 +19,6 @@ Route::get('tabla-posiciones', 'GameController@table')->name('table');
 Route::get('jugando','GameController@playing')->name('playing');
 Route::get('tabla-posiciones','GameController@table')->name('table');
 
+Route::get('reporte', 'AdminController@index');
+
 
