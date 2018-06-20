@@ -13,7 +13,7 @@ class GameController extends Controller{
 	 * @return void
 	 */
 	public function __construct() {
-        Auth()->loginUsingId(1, true);
+
 		$this->middleware( 'auth' );
 	}
 

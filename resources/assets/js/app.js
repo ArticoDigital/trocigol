@@ -46,7 +46,6 @@ const stage = document.querySelector('.complete');
         };
         GameMaker_Init();
 
-
     };
 
     const s = document.getElementsByTagName('script')[0];
