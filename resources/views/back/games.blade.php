@@ -14,7 +14,7 @@
                 <th># Partida</th>
                 <th>Nivel</th>
                 <th>Puntaje</th>
-                <th>Tiempo último nivel</th>
+                <th>Tiempo total</th>
                 <th>Fecha</th>
             </tr>
             </thead>

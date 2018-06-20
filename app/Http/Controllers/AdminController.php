@@ -9,7 +9,6 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        //Auth()->loginUsingId(1, true);
         $this->middleware(['auth', 'Admin']);
     }
 
@@ -25,12 +24,16 @@ class AdminController extends Controller
 
         return view('back.games', compact('user'));
     }
-    public function search(Request $request){
+
+    public function search(Request $request)
+    {
         $name = $request->input('name');
         $users = User::whereRaw('name like "%' . $name . '%"')->paginate(100);
         return view('back.home', compact('users'));
     }
-    public function userAllExcel(){
+
+    public function userAllExcel()
+    {
         return (new ReportUserExcelController)->download('usuarios.xlsx');
     }
 
