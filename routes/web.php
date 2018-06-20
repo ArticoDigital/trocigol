@@ -35,18 +35,8 @@ Route::get('e', function () {
         ->orderBy('maxscore', 'desc')
         ->limit(200)->get();
     $scoresByUser = $scoresQuery->groupBy('name');
-    $scores = [];
-    foreach ($scoresByUser as $score) {
-        $maxScore = $score->first();
-        $scores [] = [
-            "name" => $maxScore->name,
-            "avatar" => $maxScore->avatar,
-            "gameId" => $maxScore->gameId,
-            "maxscore" => $maxScore->maxscore
-        ];
-    }
-    $scores = collect($scores);
-    $scores = $scores->forPage(1, 1);
+    $scores = $scoresByUser->forPage(1, 10);
+    dd($scores);
 });
 
 
