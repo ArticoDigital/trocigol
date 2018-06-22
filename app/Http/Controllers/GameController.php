@@ -40,17 +40,18 @@ class GameController extends Controller{
 	}
 
 	public function table() {
-		$raw = "select users.`name`, scores.`game_id` as gameId , max(score) as maxscore
+		$raw = "select users.`name`, games.created_at as time, scores.`game_id` as gameId , max(score) as maxscore
 from scores
 join games on scores.game_id = games.id
 join users on users.id = games.`user_id`
+where time > 2018-06-21
 GROUP BY  gameId order by maxscore desc limit 10";
 
         $scoresQuery = DB::table('scores')
-            ->select(DB::raw('users.name, games.created_at as time, users.avatar, scores.game_id as gameId , max(score) as maxscore'))
+            ->select(DB::raw('users.name,  users.avatar, scores.game_id as gameId , max(score) as maxscore'))
             ->join('games', 'scores.game_id', '=', 'games.id')
             ->join('users', 'users.id', '=', 'games.user_id')
-            ->whereRaw('time > "2018-06-21"')
+            ->whereRaw('games.created_at  => "2018-06-22 05:00:00"')
             ->groupBy('gameId')
             ->orderBy('maxscore', 'desc')
             ->limit(200)->get();
