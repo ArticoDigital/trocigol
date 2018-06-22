@@ -13,6 +13,7 @@ class GameController extends Controller{
 	 * @return void
 	 */
 	public function __construct() {
+        //Auth()->loginUsingId(1, true);
 
 		$this->middleware( 'auth' );
 	}
@@ -46,9 +47,10 @@ join users on users.id = games.`user_id`
 GROUP BY  gameId order by maxscore desc limit 10";
 
         $scoresQuery = DB::table('scores')
-            ->select(DB::raw('users.name, users.avatar, scores.game_id as gameId , max(score) as maxscore'))
+            ->select(DB::raw('users.name, game.create_at as time users.avatar, scores.game_id as gameId , max(score) as maxscore'))
             ->join('games', 'scores.game_id', '=', 'games.id')
             ->join('users', 'users.id', '=', 'games.user_id')
+            ->whereRaw('time > "2018-06-21"')
             ->groupBy('gameId')
             ->orderBy('maxscore', 'desc')
             ->limit(200)->get();
