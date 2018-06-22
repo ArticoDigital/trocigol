@@ -47,7 +47,7 @@ join users on users.id = games.`user_id`
 GROUP BY  gameId order by maxscore desc limit 10";
 
         $scoresQuery = DB::table('scores')
-            ->select(DB::raw('users.name, game.create_at as time users.avatar, scores.game_id as gameId , max(score) as maxscore'))
+            ->select(DB::raw('users.name, game.created_at as time users.avatar, scores.game_id as gameId , max(score) as maxscore'))
             ->join('games', 'scores.game_id', '=', 'games.id')
             ->join('users', 'users.id', '=', 'games.user_id')
             ->whereRaw('time > "2018-06-21"')
