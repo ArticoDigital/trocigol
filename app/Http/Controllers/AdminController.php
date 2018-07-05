@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,14 @@ class AdminController extends Controller
 
     public function gamesUser(User $user)
     {
+        $user = $user->load('games.scores');
+
+        return view('back.games', compact('user'));
+    }
+
+    public function gamesLevel( Game $game, $id)
+    {
+        dd($game);
         $user = $user->load('games.scores');
 
         return view('back.games', compact('user'));

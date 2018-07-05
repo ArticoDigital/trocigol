@@ -27,6 +27,7 @@
                         <td>{{$game->scores->last()->score}}</td>
                         <td>{{$game->scores->last()->time}}</td>
                         <td>{{$game->scores->last()->created_at}}</td>
+                        <td><a href="{{route('gamesUserLevel',$user->id, $game->id)}}">Ver juegos</a></td>
                     </tr>
             @endif
             @endForeach
