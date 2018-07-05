@@ -22,7 +22,7 @@ Route::get('tabla-posiciones', 'GameController@table')->name('table');
 Route::get('reporte', 'AdminController@index')->name('usersReport');
 Route::get('reporte/busqueda', 'AdminController@search')->name('gamesUserSearch');
 Route::get('reporte/juegos/{user}', 'AdminController@gamesUser')->name('gamesUserReport');
-Route::get('reporte/juegos/{user}/{game_id}', 'AdminController@gamesLevel')->name('gamesUserLevel');
+Route::get('reporte/juegos/{user}/{game}', 'AdminController@gamesLevel')->name('gamesUserLevel');
 
 Route::get('userAllExcel', 'AdminController@userAllExcel')->name('userAllExcel');
 

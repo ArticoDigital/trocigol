@@ -26,7 +26,7 @@ class AdminController extends Controller
         return view('back.games', compact('user'));
     }
 
-    public function gamesLevel( Game $game, $id)
+    public function gamesLevel($id, Game $game)
     {
         dd($game);
         $user = $user->load('games.scores');
