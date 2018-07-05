@@ -26,12 +26,11 @@ class AdminController extends Controller
         return view('back.games', compact('user'));
     }
 
-    public function gamesLevel($id, Game $game)
+    public function gamesLevel(User $user, Game $game)
     {
-        dd($game);
-        $user = $user->load('games.scores');
+        $game = $game->load('scores');
 
-        return view('back.games', compact('user'));
+        return view('back.levels', compact('game','user'));
     }
 
     public function search(Request $request)
@@ -41,9 +40,10 @@ class AdminController extends Controller
         return view('back.home', compact('users'));
     }
 
-    public function userAllExcel()
-    {
-        return (new ReportUserExcelController)->download('usuarios.xlsx');
-    }
+public
+function userAllExcel()
+{
+    return (new ReportUserExcelController)->download('usuarios.xlsx');
+}
 
 }
