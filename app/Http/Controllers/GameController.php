@@ -52,7 +52,7 @@ GROUP BY  gameId order by maxscore desc limit 10";
             ->join('games', 'scores.game_id', '=', 'games.id')
             ->join('users', 'users.id', '=', 'games.user_id')
             ->whereRaw(' games.created_at  >= "2018-07-16 05:00:00" ')
-            ->whereRaw('users.id NOT IN (2574,2500,2504,2576, 3012,3793)')
+            ->whereRaw('users.id NOT IN (2574,2500,2504,2576, 3012,3793,4018,4016)')
             ->groupBy('gameId')
             ->orderBy('maxscore', 'desc')
             ->limit(200)->get();
