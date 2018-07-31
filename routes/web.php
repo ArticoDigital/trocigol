@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
+    return view('front.home1');
+})->name('home')->middleware('isHomeAuth');
+
+Route::get('/admon-user', function () {
     return view('front.home');
 })->name('home')->middleware('isHomeAuth');
 
@@ -26,19 +30,6 @@ Route::get('reporte/juegos/{user}/{game}', 'AdminController@gamesLevel')->name('
 
 Route::get('userAllExcel', 'AdminController@userAllExcel')->name('userAllExcel');
 
-Route::get('e', function () {
-
-    $scoresQuery = DB::table('scores')
-        ->select(DB::raw('users.name, users.avatar, scores.game_id as gameId , max(score) as maxscore'))
-        ->join('games', 'scores.game_id', '=', 'games.id')
-        ->join('users', 'users.id', '=', 'games.user_id')
-        ->groupBy('gameId')
-        ->orderBy('maxscore', 'desc')
-        ->limit(200)->get();
-    $scoresByUser = $scoresQuery->groupBy('name');
-    $scores = $scoresByUser->forPage(1, 10);
-    dd($scores);
-});
 
 
 
