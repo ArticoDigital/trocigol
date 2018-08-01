@@ -11,7 +11,6 @@
         <table>
             <thead>
             <tr>
-
                 <th>Tiempo</th>
                 <th>Puntaje</th>
                 <th>Fecha</th>
@@ -20,13 +19,11 @@
             <tbody>
             @foreach($game->scores as $score)
                 <tr>
-
                     <td>{{$score->time}}</td>
                     <td>{{$score->level}}</td>
                     <td>{{$score->score}}</td>
                     <td>{{$score->created_at}}</td>
                 </tr>
-
             @endForeach
         </table>
 
